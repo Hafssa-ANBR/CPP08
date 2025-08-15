@@ -9,11 +9,15 @@
 /*   Updated: 2025/08/11 18:49:41 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <iostream>
+#pragma once
+#include <algorithm>
+#include <stdexcept>
 
 template <typename T>
-void easyfind(T first, int sec)
+typename T::iterator easyfind(T &cont, int val)
 {
-    
+    typename T::iterator iter = std::find(cont.begin(), cont.end(), val);
+    if (iter == cont.end())
+        throw std::runtime_error("Value not found in cont");
+    return iter;
 }

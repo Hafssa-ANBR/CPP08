@@ -40,7 +40,7 @@ int Span::shortestSpan()
     std::sort(sorted.begin(), sorted.end());
     int minSpan = sorted[1] - sorted[0];
     int span;
-    for (size_t i = 1; i < sorted.size() - 1; i++) // ou ++i
+    for (size_t i = 1; i < sorted.size() - 1; i++) // or ++i
     {
         span = sorted[i + 1] - sorted[i];
         if (span < minSpan)
